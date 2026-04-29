@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   LYNXX BACKGROUND WATERMARK
+   ======================================== */
+:root {
+  --watermark-opacity: 0.12;
+  --watermark-font: 'Bebas Neue', sans-serif;
+  --watermark-color: #808080;
+}
+
+.lynxx-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--watermark-font);
+  font-size: clamp(15vw, 20vw, 25vw);
+  font-weight: 700;
+  color: var(--watermark-color);
+  opacity: var(--watermark-opacity);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+  letter-spacing: 0.05em;
+}
+
+/* Custom cursor only on the home page (App.home class) */
+.App.home {
+  cursor: none;
+}
+@media (max-width: 768px) {
+  .App.home {
+    cursor: auto;
+  }
+}
+
+/* ========================================
+   GLOBAL
+   ======================================== */
+html, body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #000;
+  overscroll-behavior: none;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.will-change-transform {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus, a:focus {
+  outline: none;
+}
+
+/* Hide scrollbar utility for horizontal carousels */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Subtle pulse for the "click around" hint */
+@keyframes lynxx-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+.lynxx-pulse { animation: lynxx-pulse 2s ease-in-out infinite; }
+
+/* Page transition fade */
+@keyframes page-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.page-in { animation: page-in 0.5s ease-out both; }
