@@ -12,7 +12,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-[4/5] overflow-hidden bg-stone-200">
               <img
-                src="https://picsum.photos/seed/about-portrait/900/1125"
+                src="https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/6b702556-4ce8-412d-54e9-c2138376f900/public"
                 alt="Portrait"
                 className="w-full h-full object-cover"
               />
