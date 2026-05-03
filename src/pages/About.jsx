@@ -21,7 +21,7 @@ const About = () => {
               className="mt-4 text-[10px] tracking-[0.3em] uppercase text-stone-400"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Portrait — Studio
+              Portrait — N.A.W.A Studio
             </p>
           </div>
 
