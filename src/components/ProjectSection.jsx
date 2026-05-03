@@ -91,7 +91,7 @@ const ProjectSection = ({ project, index, images }) => {
                 src={src}
                 alt={`${project.title} — ${i + 1}`}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
+                className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
               />
             </div>
             <figcaption
