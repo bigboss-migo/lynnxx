@@ -7,7 +7,19 @@ export const projects = [
     slug: "project-01",
     tag: "Editorial",
     year: "2024",
-    image: "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/a308f451-8274-42ef-0263-6ed4708bf900/public",
+    image: "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/000d671b-a1d5-4b32-95b5-1c19b8577800/public",  // homepage tile
+    images: [                              // ←: portfolio carousel
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/2257fdef-2aea-4426-914c-d30012476200/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/4fab7a48-e9bb-4b84-b275-dae72d578c00/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/812203a3-436c-44ef-6fda-d73ecf687c00/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/66048a4a-d681-4a74-bd2f-c50fcba09900/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/4e9a1368-5a76-476b-ee76-9341814f9400/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/fa6c98b3-afd0-447d-9405-a8314490f300/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/76c4b4f3-4a62-4eab-70c0-4ceca84ed000/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/0e986a09-0f35-45b3-8f22-1f316a186e00/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/b6e525f2-542e-46e7-0e9a-34722cbd4600/public",
+      "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/cf5493d2-40d0-4e95-e7c3-37272317b000/public",
+    ],
   },
   {
     id: 2,
@@ -69,5 +81,7 @@ export const navItems = [
 ];
 
 // Helper for portfolio carousels — 13 placeholder images per project, seeded for variety
-export const buildImages = (seed) =>
-  Array.from({ length: 13 }, (_, i) => `https://picsum.photos/seed/${seed}-${i}/1400/900`);
+export const buildImages = (projectId) => {
+  const project = projects.find((p) => p.id === projectId);
+  return project?.images ?? [];
+};
