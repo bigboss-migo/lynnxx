@@ -115,7 +115,7 @@ export const projects = [
     slug: "all-work",
     tag: "Index",
     year: "—",
-    image: "",
+    image: "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/ce2b60bc-7fe9-4c4a-4b15-3889b7f1c000/public",
   },
 ];
 
