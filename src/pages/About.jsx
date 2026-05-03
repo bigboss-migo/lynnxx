@@ -34,20 +34,21 @@ const About = () => {
               About
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] mb-10 tracking-tight">
-              A practice rooted in <em className="italic text-stone-500">light</em>, form, and quiet
-              observation.
+             I am <em className="italic text-stone-500">Lynxx Zaphiar</em>, a multidisciplinary creative, stylist, aspiring fashion designer, filmmaker, and model driven by vision, authenticity, and purpose.
             </h1>
 
             <div className="space-y-5 text-lg md:text-xl font-light leading-relaxed text-stone-700 max-w-xl">
               <p>
-                Working between editorial, fashion, and personal documentary, the studio approaches
-                each commission as a study — in tone, in restraint, in the way a single frame can
-                hold a mood.
+                My work exists at the intersection of fashion, film, and storytelling, where identity and self expression shape every concept I create. 
+                As an androgynous artist, I embrace duality and challenge traditional boundaries, building spaces where individuality feels powerful and seen.
               </p>
               <p>
-                Based in [City], with projects produced internationally for clients across
-                publishing, fashion, and culture. Available for assignment, exhibition, and
-                longer-form collaboration.
+                Beyond the creative world, I bring over 16 years of experience as a nurse, a journey that has strengthened my empathy, discipline, and understanding
+                of human emotion. That lived experience informs my art, allowing me to create work that is not only visually striking but emotionally honest.
+              </p>
+              <p>
+              Whether styling looks, designing concepts, performing on camera, or directing stories, my goal is simple. Create meaningful work that commands presence, reflects truth, and leaves a lasting impact.
+                <br>I believe style is language, storytelling is legacy, and purpose is the foundation of everything I create.</br>
               </p>
             </div>
 
@@ -57,11 +58,11 @@ const About = () => {
             >
               <div>
                 <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">Based</p>
-                <p className="text-sm">[City, Country]</p>
+                <p className="text-sm">[Atlanta, Miami, New York]</p>
               </div>
               <div>
                 <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">Since</p>
-                <p className="text-sm">2018</p>
+                <p className="text-sm">2011</p>
               </div>
             </div>
           </div>
