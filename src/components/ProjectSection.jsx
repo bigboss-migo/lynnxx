@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Lightbox from './Lightbox';
 
 const ProjectSection = ({ project, index, images }) => {
   const scrollRef = useRef(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
+
+  // Lightbox state — null when closed, image index (number) when open
+  const [lightboxIndex, setLightboxIndex] = useState(null);
 
   const updateButtons = () => {
     const el = scrollRef.current;
@@ -30,6 +34,16 @@ const ProjectSection = ({ project, index, images }) => {
     if (!el) return;
     el.scrollBy({ left: dir * el.clientWidth * 0.85, behavior: 'smooth' });
   };
+
+  // Lightbox controls
+  const openLightbox = (i) => setLightboxIndex(i);
+  const closeLightbox = () => setLightboxIndex(null);
+  const nextImage = () =>
+    setLightboxIndex((i) => (i === null ? null : (i + 1) % images.length));
+  const prevImage = () =>
+    setLightboxIndex((i) =>
+      i === null ? null : (i - 1 + images.length) % images.length
+    );
 
   return (
     <div>
@@ -86,14 +100,19 @@ const ProjectSection = ({ project, index, images }) => {
             key={i}
             className="snap-start flex-none w-[78vw] md:w-[55vw] lg:w-[42vw] xl:w-[36vw]"
           >
-            <div className="aspect-[3/2] overflow-hidden bg-stone-200">
+            <button
+              type="button"
+              onClick={() => openLightbox(i)}
+              className="block w-full aspect-[3/2] overflow-hidden bg-stone-200 cursor-zoom-in group"
+              aria-label={`Open ${project.title} image ${i + 1} in lightbox`}
+            >
               <img
                 src={src}
                 alt={`${project.title} — ${i + 1}`}
                 loading="lazy"
-                className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-[1.02]"
+                className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
               />
-            </div>
+            </button>
             <figcaption
               className="mt-3 text-[10px] tracking-[0.3em] uppercase text-stone-400 flex justify-between"
               style={{ fontFamily: "'Inter', sans-serif" }}
@@ -108,6 +127,18 @@ const ProjectSection = ({ project, index, images }) => {
           </figure>
         ))}
       </div>
+
+      {/* Lightbox overlay */}
+      {lightboxIndex !== null && (
+        <Lightbox
+          images={images}
+          index={lightboxIndex}
+          onClose={closeLightbox}
+          onPrev={prevImage}
+          onNext={nextImage}
+          projectTitle={project.title}
+        />
+      )}
     </div>
   );
 };
