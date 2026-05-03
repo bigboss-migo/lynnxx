@@ -27,7 +27,7 @@ export const projects = [
     slug: "project-02",
     tag: "Commercial",
     year: "2024",
-    image: "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/81e7573e-2887-4f94-9d84-eccb16a05300/public",
+    image: "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/520da57b-5244-44b8-9dcd-d4239eeb8c00/public",
     images: [                              // ←: portfolio carousel
       "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/520da57b-5244-44b8-9dcd-d4239eeb8c00/public",
       "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/0bbf6abf-3a93-4825-25b0-8765235b6300/public",
@@ -115,7 +115,7 @@ export const projects = [
     slug: "all-work",
     tag: "Index",
     year: "—",
-    image: "https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/99993676-d0c4-4748-36a6-a891afe22f00/public",
+    image: "",
   },
 ];
 
