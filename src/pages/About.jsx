@@ -7,21 +7,21 @@ const About = () => {
       style={{ fontFamily: "'Cormorant Garamond', 'Times New Roman', serif" }}
     >
       <section className="max-w-[1600px] mx-auto px-6 md:px-12 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-start">
           {/* Left — Photo */}
-          <div className="relative">
+          <div className="relative md:sticky md:top-28">
             <div className="aspect-[4/5] overflow-hidden bg-stone-200">
               <img
-                src="https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/6b702556-4ce8-412d-54e9-c2138376f900/public"
-                alt="Portrait"
-                className="w-full h-full object-cover"
+                src="https://imagedelivery.net/qPl4NOqbLb6xIvDbtIUFUw/9440b473-415f-462f-b7cf-9c75215d5c00/public"
+                alt="Lynxx Zaphiar"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             <p
               className="mt-4 text-[10px] tracking-[0.3em] uppercase text-stone-400"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Portrait — Studio
+              Comp Card by — NAWA Studio
             </p>
           </div>
 
@@ -34,35 +34,35 @@ const About = () => {
               About
             </p>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] mb-10 tracking-tight">
-              A practice rooted in <em className="italic text-stone-500">light</em>, form, and quiet
-              observation.
+              I'm Lynxx Zaphiar — a multidisciplinary <em className="italic text-stone-500">creative</em>.
             </h1>
 
             <div className="space-y-5 text-lg md:text-xl font-light leading-relaxed text-stone-700 max-w-xl">
               <p>
-                Working between editorial, fashion, and personal documentary, the studio approaches
-                each commission as a study — in tone, in restraint, in the way a single frame can
-                hold a mood.
+                Stylist, aspiring fashion designer, filmmaker, and model — driven by vision,
+                authenticity, and purpose.
               </p>
               <p>
-                Based in [City], with projects produced internationally for clients across
-                publishing, fashion, and culture. Available for assignment, exhibition, and
-                longer-form collaboration.
+                My work exists at the intersection of fashion, film, and storytelling, where
+                identity and self expression shape every concept I create. As an androgynous artist,
+                I embrace duality and challenge traditional boundaries, building spaces where
+                individuality feels powerful and seen.
               </p>
-            </div>
-
-            <div
-              className="mt-12 grid grid-cols-2 gap-8 max-w-md"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
-              <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">Based</p>
-                <p className="text-sm">[City, Country]</p>
-              </div>
-              <div>
-                <p className="text-[10px] tracking-[0.3em] uppercase text-stone-400 mb-2">Since</p>
-                <p className="text-sm">2018</p>
-              </div>
+              <p>
+                Beyond the creative world, I bring over 16 years of experience as a nurse — a
+                journey that has strengthened my empathy, discipline, and understanding of human
+                emotion. That lived experience informs my art, allowing me to create work that is
+                not only visually striking but emotionally honest.
+              </p>
+              <p>
+                Whether styling looks, designing concepts, performing on camera, or directing
+                stories, my goal is simple: create meaningful work that commands presence, reflects
+                truth, and leaves a lasting impact.
+              </p>
+              <p>
+                I believe style is language, storytelling is legacy, and purpose is the foundation
+                of everything I create.
+              </p>
             </div>
           </div>
         </div>
