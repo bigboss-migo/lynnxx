@@ -3,6 +3,19 @@ import { gsap } from 'gsap';
 import { projects } from '../data/mock';
 import { ArrowRight } from 'lucide-react';
 
+// Tile positions on the homepage canvas. The grid will render projects
+// in this order, up to however many positions exist. Add or remove rows
+// here to change the layout.
+const tilePositions = [
+  { x: 38, y: 35, width: 24, height: 20 },
+  { x: 5,  y: 8,  width: 22, height: 18 },
+  { x: 75, y: 5,  width: 20, height: 28 },
+  { x: 5,  y: 68, width: 20, height: 24 },
+  { x: 75, y: 70, width: 20, height: 16 },
+  { x: 40, y: 70, width: 18, height: 15 },
+  { x: 72, y: 38, width: 18, height: 15 },
+];
+
 const ProjectGrid = ({ onItemClick }) => {
   const containerRef = useRef(null);
   const canvasRef = useRef(null);
@@ -53,15 +66,15 @@ const ProjectGrid = ({ onItemClick }) => {
     );
   }, []);
 
-  const baseProjects = [
-    { ...projects[0], position: { x: 38, y: 35 }, size: { width: 24, height: 20 } },
-    { ...projects[1], position: { x: 5,  y: 8  }, size: { width: 22, height: 18 } },
-    { ...projects[2], position: { x: 75, y: 5  }, size: { width: 20, height: 28 } },
-    { ...projects[3], position: { x: 5,  y: 68 }, size: { width: 20, height: 24 } },
-    { ...projects[4], position: { x: 75, y: 70 }, size: { width: 20, height: 16 } },
-    { ...projects[5], position: { x: 40, y: 70 }, size: { width: 18, height: 15 } },
-    { ...projects[6], position: { x: 72, y: 38 }, size: { width: 18, height: 15 } },
-  ];
+  // Adaptive: only render as many tiles as we have projects AND positions for.
+  // No hardcoded indices, no blank tiles.
+  const baseProjects = projects
+    .slice(0, tilePositions.length)
+    .map((project, i) => ({
+      ...project,
+      position: { x: tilePositions[i].x, y: tilePositions[i].y },
+      size: { width: tilePositions[i].width, height: tilePositions[i].height },
+    }));
 
   const spreadProjects = baseProjects.map((project) => ({
     ...project,
@@ -104,7 +117,7 @@ const ProjectGrid = ({ onItemClick }) => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 style={{ aspectRatio: '16/10' }}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
